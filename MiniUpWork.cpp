@@ -19,18 +19,22 @@ struct worker_info {
 
 class upWork {
 public:
-	worker_info workers[AMOUNT]; //defining the structure [100]
-    void hire();
-	void main_menu(); //to display the main menu
+	worker_info workers[AMOUNT]; //defining the structure [10000]
+
+	void main_menu(); //the main menu for employees
 	void add(); //to register as a worker
-	void searchByID(); //to display the worker record
-	void searchByType();
-	void workersList(); //to display the list of workers
-	void workList();
 	void edit(); //to edit the workers record
-	bool check(int); //to check status
 	void modify(int); //to modify the record
 	void delete_rec(int); //to delete the record
+
+	bool check(int); //to check status
+
+	void hire(); //the main menu for employers
+	void searchByID(); //to display the worker record
+	void searchByType(); //to search workers by their id number
+	void workersList(); //to display the list of workers
+	void workList(); //to display the list of registered worktypes
+	
 };
 
 void upWork::main_menu()
@@ -76,7 +80,7 @@ void upWork::add()
 	system("cls");
 	int r,flag;
 	ofstream fout("Record.dat", ios::binary);
-    cout<<"\n _____________________________";
+        cout<<"\n _____________________________";
 	cout<<"\n    Fill the form below   :)  ";
 	cout<<"\n -----------------------------";
 	cout<<"\n\n Preferred ID number: ";
@@ -106,6 +110,7 @@ void upWork::add()
 
 		loopPass:
 		string pass1, pass2;
+		
         cout<<setw(22)<<" Password: ";
         cin>>pass1;
         cout<<setw(22)<<"Confirm Password: ";
@@ -117,12 +122,12 @@ void upWork::add()
             cout<< "\n \aPasswords doesn't match!! Try again. \n";
             goto loopPass;
         }
-
-		fout.write((char*) this, sizeof(upWork)); //????????????????????????
+		
+		fout.write((char*) this, sizeof(upWork)); 
 		cout<<setw(24)<<"\n *******************************";
 		cout<<setw(24)<<"\n *     Congratulations         *";
 		cout<<setw(24)<<"\n * Registered Successfully!! :)*";
-        cout<<setw(24)<<"\n *******************************";
+        	cout<<setw(24)<<"\n *******************************";
 	}
 	cout<<"\n Press any key to continue!!";
 	getch();
@@ -135,7 +140,7 @@ void upWork::searchByID()
 	int r;
 	cout<<"\n Find worker by ID number: ";
 	cin>>r;
-    cin.ignore();
+    	cin.ignore();
     if (cin.fail()) {
         cin.clear();
         cin.ignore(9999, '\n');
@@ -150,7 +155,7 @@ void upWork::searchByID()
 		cout<<setw(8)<<"\n Address: "<< workers[r].address;
 		cout<<"\n Phone no: "<< workers[r].phone;
 		cout<<"\n Job type: "<<workers[r].workType;
-        cout<<"\n Years of experience: "<<workers[r].workExperience;
+        	cout<<"\n Years of experience: "<<workers[r].workExperience;
 	}
 
 	else {
@@ -165,10 +170,10 @@ void upWork::searchByType()
 	system("cls");
 	string typeOfWork, spannedYr;
 
-    cout<<setw(22)<<" Job type: ";
-    getline(cin, typeOfWork);
-    cout<<setw(22)<<" Minimum year of experience: ";
-    getline(cin, spannedYr);
+    	cout<<setw(22)<<" Job type: ";
+    	getline(cin, typeOfWork);
+    	cout<<setw(22)<<" Minimum year of experience: ";
+    	getline(cin, spannedYr);
 	cout<<"\n\t\t\tList Of Registered Workers With the given specification";
 	cout<<"\n\t\t\t*******************************************************";
 	cout<<"\n\n ID No.\t\tName\t\tAddress\t\tPhoneNo.\tWork Type\tWork Experience\n";
@@ -271,7 +276,7 @@ void upWork::modify(int r)
     cout<<"\n Password: ";
 	cin>>pass;
 	if(pass == workers[r].password){
-    ofstream file("Record.dat",ios::binary);
+    	ofstream file("Record.dat",ios::binary);
 
 	cout<<"\n Enter New Details";
 	cout<<"\n *****************";
@@ -282,9 +287,9 @@ void upWork::modify(int r)
 	cout<<" Phone no: ";
 	getline(cin, workers[r].phone);
 	cout<<" Job type: ";
-    getline(cin, workers[r].workType);
-    cout<<" Years of experience: ";
-    getline(cin, workers[r].workExperience);
+    	getline(cin, workers[r].workType);
+    	cout<<" Years of experience: ";
+    	getline(cin, workers[r].workExperience);
 
 	file.write((char*) this, sizeof(upWork));
 	file.close();
@@ -315,7 +320,7 @@ void upWork::delete_rec(int r)
 		ofstream fout("Record.dat", ios::binary);
 		fout.write((char*) this, sizeof(upWork));
 		fout.close();
-        cout<<endl<<setw(20)<< "Deleted successfully!!";
+        	cout<<endl<<setw(20)<< "Deleted successfully!!";
      }
     }
     cout<< "\n \a Wrong Password!! - Try again later :(";
@@ -332,7 +337,7 @@ void upWork::hire() {
 		cout<<"\n\n\n\t\t\t1.Find by ID";
 		cout<<"\n\t\t\t2.Find by work type";
 		cout<<"\n\t\t\t3.Available Workers List";
-        cout<<"\n\t\t\t4.List Of Registered Work Types ";
+       		cout<<"\n\t\t\t4.List Of Registered Work Types ";
 		cout<<"\n\t\t\t5.Exit";
 		cout<<"\n\n\t\t\tEnter Your Choice: ";
 		cin>>choice;
@@ -371,7 +376,7 @@ int main(){
 		record.read( (char*) &h, sizeof(upWork));
 	 	record.close();
 	}
-    cout<<"\n\t\t\t\t********************************";
+    	cout<<"\n\t\t\t\t********************************";
 	cout<<"\n\t\t\t\t* (: WELCOME TO MINI UPWORK :) *";
 	cout<<"\n\t\t\t\t********************************";
 	cout<<"\n\n\n\t\t\t1.Find work";
@@ -380,7 +385,7 @@ int main(){
     int x;
     menu:
 
-        cout<<"\n\n\t\t\tEnter Your Choice: ";
+            cout<<"\n\n\t\t\tEnter Your Choice: ";
             cin>>x;
              if (cin.fail()) { //if entered a data type other than int
             cout<< "Enter a valid key \a";

@@ -15,4 +15,7 @@ Use the "Hire" section if you want peoples to hire
  - Use "Exit" to if you finish your task
 
  It's assumed that after an employer gets the right type of worker he/she can contact
- the worker using the provided phone number and other personal informations.
+ the worker using the provided phone number and other personal informations. However, this will not be the end of this 
+ project, we will try to advance the project with some features like:
+  - putting  some kind of notification for the employee if he/she got employers attention
+  - allowing the employer choose filtering methods for finding employees

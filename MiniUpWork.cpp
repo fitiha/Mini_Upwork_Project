@@ -275,6 +275,7 @@ void upWork::modify(int r)
     string pass;
     cout<<"\n Password: ";
 	cin>>pass;
+	cin.ignore();
 	if(pass == workers[r].password){
     	ofstream file("Record.dat",ios::binary);
 
@@ -295,7 +296,8 @@ void upWork::modify(int r)
 	file.close();
 	cout<<"\n Record is modified!!";
 	}
-	cout<< "\n \a Wrong Password!! - Try again later :(";
+	else{
+	cout<< "\n \a Wrong Password!! - Try again later :(";}
 }
 
 void upWork::delete_rec(int r)

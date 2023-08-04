@@ -21,11 +21,11 @@ class upWork {
 public:
 	worker_info workers[AMOUNT]; //defining the structure [10000]
 
-	void main_menu(); //the main menu for employees
-	void add(); //to register as a worker
-	void edit(); //to edit the workers record
-	void modify(int); //to modify the record
-	void delete_rec(int); //to delete the record
+	void main_menu(); //the main menu for employees.
+	void add(); //to register as a worker.
+	void edit(); //to edit the workers record.
+	void modify(int); //to modify the record.
+	void delete_rec(int); //to delete the record.
 
 	bool check(int); //to check status
 

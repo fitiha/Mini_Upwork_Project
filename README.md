@@ -1,12 +1,12 @@
 **MANUAL FOR USING THE PLATFORM**
 
-**For Workers**
+***For Workers***
 Use the "Find Work" section if you are a worker
  - Use "Register" to add your profile as a worker
  - Use "Edit Profile" to modify or delete your account profile
  - Use "Exit" to if you finish your task
 
-**For Employers**
+***For Employers***
 Use the "Hire" section if you want peoples to hire
  - Use "Find by ID" to know the details of a worker using his/her ID
  - Use "Find by work type" to get the list of workers sorted by their job type

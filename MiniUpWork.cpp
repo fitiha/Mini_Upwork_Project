@@ -282,7 +282,7 @@ void upWork::modify(int r)
 	cout<<"\n Enter New Details";
 	cout<<"\n *****************";
 	cout<<"\n Name: ";
-	getline(cin, workers[r].name;
+	getline(cin, workers[r].name);
 	cout<<" Address: ";
 	getline(cin, workers[r].address);
 	cout<<" Phone no: ";

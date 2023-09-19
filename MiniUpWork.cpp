@@ -2,6 +2,7 @@
 #include<conio.h>
 #include<fstream>
 #include<iomanip>
+#include<cstring>
 using namespace std;
 
 #define AMOUNT 10000

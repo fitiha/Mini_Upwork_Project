@@ -19,4 +19,4 @@ Use the "Hire" section if you want peoples to hire
  project, we will try to advance the project with some features like:
   - putting  some kind of notification for the employee if he/she got employers attention
   - allowing the employer choose filtering methods for finding employees
-  - create a featured website so that it is accessable over the internet
+  - create a website so that it is accessable over the internet
